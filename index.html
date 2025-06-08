@@ -26,16 +26,20 @@
             padding: 10px 0;
         }
         .navbar-brand img {
-            height: 180px; /* POWIĘKSZONE LOGO */
-            max-height: 200px;
+            height: 90px;
+            max-height: 100px;
             object-fit: contain;
-            transition: height 0.3s ease;
         }
         .hero-section {
             background: url('images/huj.jpg') no-repeat center center/cover;
             color: #fff;
             text-align: center;
-            padding: 100px 20px;
+            padding: 80px 20px;
+            height: 500px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
         .hero-section h1 {
             font-size: 2.5rem;
@@ -67,17 +71,22 @@
             color: #fff;
             text-decoration: none;
         }
+        /* Pasek kontaktowy na górze - poprawiony */
         .contact-info-bar {
             background-color: #23272b;
             color: #fff;
             text-align: center;
-            padding: 15px 0;
-            font-size: 1rem;
+            padding: 8px 0;
+            font-size: 0.9rem;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            align-items: center;
         }
         .contact-info-bar a {
             color: #fff;
             text-decoration: none;
-            margin: 0 15px;
+            margin: 0;
         }
         .contact-section form {
             max-width: 600px;
@@ -92,6 +101,10 @@
 
         /* Responsywność */
         @media (max-width: 768px) {
+            .hero-section {
+                height: 350px;
+                padding: 40px 10px;
+            }
             .hero-section h1 {
                 font-size: 2rem;
             }
@@ -102,24 +115,43 @@
                 height: 150px;
             }
             .navbar-brand img {
-                height: 120px; /* Zmniejszone dla mniejszych ekranów */
-                max-height: 140px;
+                height: 70px;
+                max-height: 80px;
             }
             .contact-section .col-md-6 {
                 margin-bottom: 30px;
+            }
+            /* Pasek kontaktowy responsywny */
+            .contact-info-bar {
+                flex-direction: column;
+                gap: 8px;
+                font-size: 0.85rem;
             }
         }
     </style>
 </head>
 <body>
+    <!-- Pasek kontaktowy na górze -->
+    <div class="contact-info-bar">
+        <a href="tel:+48666062948"><i class="fas fa-phone-alt"></i> 666 062 948</a>
+        <a href="mailto:kontakt@hydro-spaw.pl"><i class="fas fa-envelope"></i> kontakt@hydro-spaw.pl</a>
+    </div>
+
     <!-- Nawigacja -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm" data-aos="fade-down">
         <div class="container">
             <a class="navbar-brand" href="#">
                 <img src="images/firma1.png" alt="Logo Hydro-Spaw" />
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarNav"
+                aria-controls="navbarNav"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+            >
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
@@ -147,7 +179,13 @@
             <div class="row align-items-center">
                 <div class="col-md-6">
                     <h2>O nas</h2>
-                    <p>Firma <strong>Hydro-Spaw</strong> oferuje kompleksowe usługi hydrauliczne i spawalnicze. Specjalizujemy się w montażu, naprawach oraz konserwacji instalacji hydraulicznych i spawalniczych. Działamy na terenie powiatu limanowskiego w Małopolsce, jak również świadczymy usługi na terenie całej Polski. Gwarantujemy najwyższą jakość, profesjonalizm i solidność. Założyciel firmy, Przemysław Sułkowski, posiada wieloletnie doświadczenie w branży.</p>
+                    <p>
+                        Firma <strong>Hydro-Spaw</strong> oferuje kompleksowe usługi hydrauliczne i spawalnicze. Specjalizujemy się
+                        w montażu, naprawach oraz konserwacji instalacji hydraulicznych i spawalniczych. Działamy na terenie
+                        powiatu limanowskiego w Małopolsce, jak również świadczymy usługi na terenie całej Polski. Gwarantujemy
+                        najwyższą jakość, profesjonalizm i solidność. Założyciel firmy, Przemysław Sułkowski, posiada
+                        wieloletnie doświadczenie w branży.
+                    </p>
                 </div>
                 <div class="col-md-6">
                     <img src="images/firma5.jpg" alt="O nas" class="img-fluid rounded" data-aos="fade-left" />
@@ -226,12 +264,6 @@
         </div>
     </section>
 
-    <!-- Pasek kontaktowy na górze -->
-    <div class="contact-info-bar">
-        <a href="tel:+48666062948"><i class="fas fa-phone-alt"></i> 666 062 948</a>
-        <a href="mailto:kontakt@hydro-spaw.pl"><i class="fas fa-envelope"></i> kontakt@hydro-spaw.pl</a>
-    </div>
-
     <!-- Stopka -->
     <footer>
         <div class="container">
@@ -250,4 +282,3 @@
     </script>
 </body>
 </html>
-
